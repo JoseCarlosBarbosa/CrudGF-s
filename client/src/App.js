@@ -8,7 +8,7 @@ import Vendas from './components/vendas/vendasListar';
 
 function App() {
 const [values, setValues] = useState();
-
+ 
 const [listaVendas, setListaVendas] = useState();
   
 console.log(listaVendas);

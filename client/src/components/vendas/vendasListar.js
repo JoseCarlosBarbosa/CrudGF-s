@@ -10,7 +10,7 @@ export default function Venda(props) {
   };
 
   return (
-    <>
+    <> 
     <FormDialog 
     open= {open} 
     setOpen = {setOpen}

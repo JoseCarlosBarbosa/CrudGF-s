@@ -10,7 +10,7 @@ import React, { useState } from "react";
 
 
 
-export default function FormDialog(props) {
+export default function FormDialog(props) { 
   const [editValues, setEditValues] = useState({
     id: props.id,
     name: props.name,

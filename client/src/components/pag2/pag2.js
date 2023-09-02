@@ -9,4 +9,4 @@ function Pag2() {
   );
 }
 
-export default Pag2;
+export default Pag2; 

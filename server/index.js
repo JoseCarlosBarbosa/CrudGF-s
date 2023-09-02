@@ -13,7 +13,7 @@ const db =mysql.createPool({
 });
 
 app.use(cors())
-app.use(express.json());
+app.use(express.json()); 
 
 app.post("/register", (req, res) =>{
     
