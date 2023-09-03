@@ -2,7 +2,8 @@
 import './App.css';
 import React, {useState, useEffect} from "react";
 import Axios from "axios";
-import Vendas from './components/vendas/vendasListar';
+
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -10,7 +11,9 @@ function App() {
 const [values, setValues] = useState();
  
 const [listaVendas, setListaVendas] = useState();
-  
+
+const Navigate =useNavigate()
+
 console.log(listaVendas);
 
 const handleChangeValues = (value) => {
@@ -19,6 +22,12 @@ const handleChangeValues = (value) => {
     [value.target.name]: value.target.value,
   }))
 };
+
+
+
+const handleClickList = () =>{
+    Navigate("/pag2")
+}
 
 //registrar
   const handleClickButton = () => {
@@ -78,24 +87,15 @@ const handleChangeValues = (value) => {
         >
           Cadastrar
         </button>
-      </div>
-      
-      {typeof listaVendas !== "undefined" &&
-      listaVendas.map((value) => {
-        return (
-        <Vendas 
-        key = {value.id} 
-        listaVendas = {listaVendas}
-        setListaVendas= {setListaVendas}
-        id= {value.id}
-        name = {value.name}
-        codFunc = {value.codFunc}
-        valorVendido = {value.valorVendido}
 
-        ></Vendas>
-        ); 
-      })}
-      
+        <button className = "listar-button" 
+      onClick={() => handleClickList()}
+
+        >
+          Listar
+        </button>
+
+      </div>
      </div>
     </div>
   );

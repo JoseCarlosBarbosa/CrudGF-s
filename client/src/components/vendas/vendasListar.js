@@ -6,7 +6,8 @@ export default function Venda(props) {
   const [open, setOpen] = useState(false); // Use o estado do useState
 
   const handleClickVenda = () => {
-    setOpen(true);
+    setOpen(false);
+    
   };
 
   return (
