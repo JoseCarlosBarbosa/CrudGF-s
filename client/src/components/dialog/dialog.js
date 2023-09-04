@@ -1,4 +1,3 @@
-
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -16,6 +15,8 @@ export default function FormDialog(props) {
     name: props.name,
     codFunc: props.codFunc,
     valorVendido: props.valorVendido,
+    dataPagamentoVenda: props.dataPagamentoVenda,
+    formaDePagamento: props.formaDePagamento,
 
   });
 
@@ -25,7 +26,8 @@ const handleEditVenda = () =>{
   name: editValues.name,
   codFunc: editValues.codFunc,
   valorVendido: editValues.valorVendido,
-
+  dataPagamentoVenda: editValues.dataPagamentoVenda,
+  formaDePagamento: editValues.formaDePagamento,
   });
   handleClose();
 };
@@ -87,6 +89,26 @@ const handleChangeValues = value => {
           onChange = {handleChangeValues}
           label="Valor Vendido"
           type="number"
+          fullWidth
+        />
+        <TextField
+          autoFocus
+          margin="dense"
+          id="dataPagamentoVenda"
+          defaultValue={props.dataPagamentoVenda}
+          onChange = {handleChangeValues}
+          label="Data do Pagamento"
+          type="TIMESTAMP"
+          fullWidth
+        />
+        <TextField
+          autoFocus
+          margin="dense"
+          id="formaDePagamento"
+          defaultValue={props.formaDePagamento}
+          onChange = {handleChangeValues}
+          label="Forma pagamento"
+          type="text"
           fullWidth
         />
       </DialogContent>

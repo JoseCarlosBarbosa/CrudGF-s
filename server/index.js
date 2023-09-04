@@ -20,14 +20,14 @@ app.post("/register", (req, res) =>{
     const { name } = req.body;
     const { codFunc } = req.body;
     const { valorVendido } = req.body;
-
-    let SQL = "INSERT INTO vendasbd (name,codFunc,valorVendido) VALUES (?,?,?)";
-
-    db.query(SQL, [name, codFunc ,valorVendido],(err,result)=> {
-        if(err) console.log(err);
+    const { formaDePagamento } = req.body;
+    let SQL = "INSERT INTO vendasbd (name, codFunc, valorVendido,formaDePagamento ) VALUES (?, ?, ?, ?)";
+    db.query(SQL, [name, codFunc, valorVendido, formaDePagamento], (err, result) => {
+        if (err) console.log(err);
         else res.send(result);
     });
 
+    console.log(req.doby);
 
 });
 
@@ -36,9 +36,12 @@ app.put("/edit", (req,res) => {
     const { name } = req.body;
     const { codFunc } = req.body;
     const { valorVendido } = req.body;
+    const { dataPagamentoVenda } = req.body;
+    const { formaDePagamento } = req.body;
+    
 
-    let SQL = "UPDATE vendasbd SET name = ?, codFunc = ?, valorVendido = ? WHERE id = ?";
-    db.query(SQL, [name, codFunc, valorVendido, id], (err, result) => {
+    let SQL = "UPDATE vendasbd SET name = ?, codFunc = ?, valorVendido = ?, dataPagamentoVenda = ?, formaDePagamento = ? WHERE id = ?";
+    db.query(SQL, [name, codFunc ,valorVendido,dataPagamentoVenda,formaDePagamento, id], (err, result) => {
         if(err) console.log(err);
         else res.send(result);
     });

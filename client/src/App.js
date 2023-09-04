@@ -35,6 +35,8 @@ const handleClickList = () =>{
       name: values.name,
       codFunc: values.codFunc,
       valorVendido: values.valorVendido,
+      dataPagamentoVenda: values.dataPagamentoVenda,
+      formaDePagamento: values.formaDePagamento,
     }).then(() => {
       setListaVendas([
         ...listaVendas,
@@ -42,7 +44,9 @@ const handleClickList = () =>{
         name: values.name,
         codFunc: values.codFunc,
         valorVendido: values.valorVendido,
-        },
+        dataPagamentoVenda: values.dataPagamentoVenda,
+        formaDePagamento: values.formaDePagamento,
+        }
       ]);
     });
   };
@@ -79,6 +83,14 @@ const handleClickList = () =>{
       className="register-input" 
       onChange={handleChangeValues}
       />
+      <input 
+      type="text"  
+      name="formaDePagamento" 
+      placeholder="Forma De Pagamento" 
+      className="register-input" 
+      onChange={handleChangeValues}
+      />
+      
       <div className="container-buton">
 
       <button className = "register-button" 
