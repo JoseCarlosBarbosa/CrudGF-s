@@ -1,0 +1,57 @@
+
+.inicial--container-1 {
+    display: flex;
+  align-items: center;
+  flex-direction: column;
+    
+    
+  }
+
+  .inicial-container-2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff; /* Cor do texto branco */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25); /* Efeito de sombra no texto */
+    position:fixed;
+    border: 2px solid #000000;
+    padding: 20px;
+    margin: 65px;
+    background-color: #1e293b; /* Cor de fundo azul escuro */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Efeito de sombra */
+    border-radius: 10px;
+    
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  
+  .inicial-selecao {
+    font-family: 'Londrina Shadow';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 76px;
+    text-align: center;
+    color: #051827;
+    mix-blend-mode: soft-light;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .botao {
+    display: flex; /* Use display: flex para centralizar verticalmente */
+  justify-content: center; /* Centralize horizontalmente */
+  align-items: center; 
+    margin: 20px auto;
+    padding: 20px 0;
+    text-align: center;
+    cursor: pointer;
+    width: 250px;
+    height: 12px;
+    left: 27px;
+    top: 306px;
+
+    background: #BCCEDC;
+    border-radius: 30px;
+  }

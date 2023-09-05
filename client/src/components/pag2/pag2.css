@@ -9,17 +9,17 @@
     left: 20px; 
     margin: -8px;
     color: #ffffff;
-    font-size: 0,7rem;
+    font-size: 1rem;
     padding: 20px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    background-color: #333; /* Cor de fundo do cabeçalho */
-    color: #fff; /* Cor do texto do cabeçalho */
+    background-color: #000000; /* Cor de fundo do cabeçalho */
+    color: #ffffff; /* Cor do texto do cabeçalho */
     padding: 5px; /* Espaçamento interno do cabeçalho */
     border-bottom: 2px solid #fff;
-    transition: blackground-color 0.2s ease;
+  transition: blackground-color 0.2s ease;
 
   
   }

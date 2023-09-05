@@ -2,12 +2,13 @@
 import './App.css';
 import React, {useState, useEffect} from "react";
 import Axios from "axios";
-
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Certifique-se de que a rota correta seja importada
 
 
 
 function App() {
+
+
 const inicialvalue = {
   name: "",
   codFunc: "",
@@ -16,8 +17,7 @@ const inicialvalue = {
   formaPagamentoVenda: "",
 };
 
-const [values, setValues] = useState(inicialvalue
-);
+const [values, setValues] = useState(inicialvalue);
  
 const [listaVendas, setListaVendas] = useState();
 
@@ -33,14 +33,17 @@ const handleChangeValues = (value) => {
 };
 
 
-
+const VoltarRegisterButton =() =>{
+  Navigate("/");
+}
 const handleClickList = () =>{
-    Navigate("/pag2")
+    Navigate("/pagLista")
 }
 
 //registrar
   const handleClickButton = () => {
-    Axios.post("http://localhost:3001/register", {  // Correção aqui
+    Axios.post("http://localhost:3001/register", { 
+       // Correção aqui
       name: values.name,
       codFunc: values.codFunc,
       valorVendido: values.valorVendido,
@@ -73,6 +76,11 @@ const handleClickList = () =>{
     <div className="app-container">
      <div className='register-container'>
       <h1 className = "register-title">GF'S </h1>
+
+        <button className="voltar--P1" onClick={VoltarRegisterButton}>
+          Voltar
+        </button>
+        
         <input 
           type='text' 
           name='name'
@@ -115,10 +123,11 @@ const handleClickList = () =>{
           className="register-input" 
           onChange={handleChangeValues}
           value = {values.formaPagamentoVenda}
+          
         />
-
+      
       <div className="container-buton">
-
+      
       <button className = "register-button" 
       onClick={() => handleClickButton()}
 

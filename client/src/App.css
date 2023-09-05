@@ -52,20 +52,44 @@ border-radius: 30px;
 
   
 }
+  
+
+.voltar--P1{
+
+  padding: 2px 5px;
+  margin: -8px;
+  color: #000000;
+  font-size: 0,7rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #000000; /* Cor de fundo do cabeçalho */
+  color: #ffffff; /* Cor do texto do cabeçalho */
+  padding: 5px; /* Espaçamento interno do cabeçalho */
+  border-bottom: 2px solid #fff;
+  transition: blackground-color 0.2s ease;
+}
 
 .container-buton {
-  display: flex; /* Ou display: grid; */
+  display: flex; 
   justify-content: center;
   align-items: center;
-  height: 20vh; /* Ajuste conforme necessário */
+  height: 10vh; 
 }
 
 .listar-button{
   padding: 2px 5px;
   margin-left: 20px;
+  font-size: 1rem;
+  background-color: #000000; /* Cor de fundo do cabeçalho */
+  color: #ffffff; /* Cor do texto do cabeçalho */
 }
 
 .register-button {
   padding: 2px 5px;
+  font-size: 1rem;
+  background-color: #000000; /* Cor de fundo do cabeçalho */
+  color: #ffffff; /* Cor do texto do cabeçalho */
   
 }

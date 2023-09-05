@@ -98,7 +98,7 @@ const handleChangeValues = value => {
           defaultValue={props.dataVenda}
           onChange = {handleChangeValues}
           label="Data da Venda"
-          type="text"
+          type="timestamp"
           fullWidth
         />
         <TextField
