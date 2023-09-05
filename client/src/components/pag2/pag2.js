@@ -40,6 +40,8 @@ function Pag2() {
           name={value.name}
           codFunc={value.codFunc}
           valorVendido={value.valorVendido}
+          dataVenda = {value.dataVenda}
+          formaPagamentoVenda= {value.formaPagamentoVenda}
         />
       ))}
     </div>

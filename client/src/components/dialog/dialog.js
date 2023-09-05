@@ -16,7 +16,8 @@ export default function FormDialog(props) {
     name: props.name,
     codFunc: props.codFunc,
     valorVendido: props.valorVendido,
-
+    dataVenda: props.dataVenda,
+    formaPagamentoVenda:props.formaPagamentoVenda,
   });
 
 const handleEditVenda = () =>{
@@ -25,7 +26,8 @@ const handleEditVenda = () =>{
   name: editValues.name,
   codFunc: editValues.codFunc,
   valorVendido: editValues.valorVendido,
-
+  dataVenda: editValues.dataVenda,
+  formaPagamentoVenda: editValues.formaPagamentoVenda,
   });
   handleClose();
 };
@@ -89,7 +91,27 @@ const handleChangeValues = value => {
           type="number"
           fullWidth
         />
-      </DialogContent>
+        <TextField
+          autoFocus
+          margin="dense"
+          id="dataVenda"
+          defaultValue={props.dataVenda}
+          onChange = {handleChangeValues}
+          label="Data da Venda"
+          type="text"
+          fullWidth
+        />
+        <TextField
+          autoFocus
+          margin="dense"
+          id="formaPagamentoVenda"
+          defaultValue={props.formaPagamentoVenda}
+          onChange = {handleChangeValues}
+          label="Forma De Pagamento"
+          type="text"
+          fullWidth
+        />
+    </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary">
           Cancelar

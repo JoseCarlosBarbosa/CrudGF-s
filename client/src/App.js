@@ -8,7 +8,16 @@ import { useNavigate } from 'react-router-dom';
 
 
 function App() {
-const [values, setValues] = useState();
+const inicialvalue = {
+  name: "",
+  codFunc: "",
+  valorVendido: "",
+  dataVenda: "",
+  formaPagamentoVenda: "",
+};
+
+const [values, setValues] = useState(inicialvalue
+);
  
 const [listaVendas, setListaVendas] = useState();
 
@@ -35,6 +44,8 @@ const handleClickList = () =>{
       name: values.name,
       codFunc: values.codFunc,
       valorVendido: values.valorVendido,
+      dataVenda: values.dataVenda,
+      formaPagamentoVenda: values.formaPagamentoVenda,
     }).then(() => {
       setListaVendas([
         ...listaVendas,
@@ -42,8 +53,12 @@ const handleClickList = () =>{
         name: values.name,
         codFunc: values.codFunc,
         valorVendido: values.valorVendido,
+        dataVenda: values.dataVenda,
+        formaPagamentoVenda: values.formaPagamentoVenda,
         },
       ]);
+      setValues(inicialvalue)
+
     });
   };
 
@@ -58,27 +73,50 @@ const handleClickList = () =>{
     <div className="app-container">
      <div className='register-container'>
       <h1 className = "register-title">GF'S </h1>
-      <input 
-      type='text' 
-      name='name'
-      placeholder='Nome'
-      className='register-input' 
-      onChange={handleChangeValues}
-      />
-      <input 
-      type='text' 
-      name='codFunc'
-      placeholder='Codigo Funcionario'
-      className='register-input'
-      onChange={handleChangeValues}
-      />
-      <input 
-      type="text"  
-      name="valorVendido" 
-      placeholder="Valor" 
-      className="register-input" 
-      onChange={handleChangeValues}
-      />
+        <input 
+          type='text' 
+          name='name'
+          placeholder='Nome'
+          className='register-input' 
+          onChange={handleChangeValues}
+          value = {values.name}
+        />
+
+        <input 
+          type='int' 
+          name='codFunc'
+          placeholder='Codigo Funcionario'
+          className='register-input'
+          onChange={handleChangeValues}
+          value = {values.codFunc}
+        />
+
+        <input 
+          type="float"  
+          name="valorVendido" 
+          placeholder="Valor" 
+          className="register-input" 
+          onChange={handleChangeValues}
+          value = {values.valorVendido}
+        />
+
+        <input 
+          type="text"  
+          name="dataVenda" 
+          placeholder="Data da Venda" 
+          className="register-input" 
+          onChange={handleChangeValues}
+          value = {values.dataVenda}
+        />
+        <input 
+          type="text"  
+          name="formaPagamentoVenda" 
+          placeholder="Forma de Pagamento" 
+          className="register-input" 
+          onChange={handleChangeValues}
+          value = {values.formaPagamentoVenda}
+        />
+
       <div className="container-buton">
 
       <button className = "register-button" 
