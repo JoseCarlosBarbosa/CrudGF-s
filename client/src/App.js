@@ -76,7 +76,7 @@ const handleClickList = () =>{
     <div className="app-container">
      <div className='register-container'>
       <h1 className = "register-title">GF'S </h1>
-
+      <h2 className = "sub-title">Cadastrar Venda </h2>
         <button className="voltar--P1" onClick={VoltarRegisterButton}>
           Voltar
         </button>

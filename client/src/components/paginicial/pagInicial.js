@@ -11,7 +11,7 @@ const Navigate = useNavigate();
 
 
   const handleClickContasPI = () => {
-    // Lógica a ser executada quando o segundo botão é clicado
+    Navigate("/Contas")
   };
 
   const handleClickRelatorioPI = () => {
@@ -22,6 +22,7 @@ const Navigate = useNavigate();
     <div className="inicial--container-1">
       <div className="inicial-container-2">
         <h1 className="inicial-selecao">GF'S </h1>
+          
 
         {/* Botão 1 */}
         <button className="botao" onClick={handleClickVendaPI}>

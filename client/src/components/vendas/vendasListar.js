@@ -2,6 +2,8 @@ import React, { useState } from "react"; // Importe o useState
 import "./vendas.css"
 import FormDialog from "../dialog/dialog";
 
+
+// Formulario de edição;
 export default function Venda(props) {
   const [open, setOpen] = useState(false); // Use o estado do useState
 

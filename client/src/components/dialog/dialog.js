@@ -32,6 +32,7 @@ const handleEditVenda = () =>{
   handleClose();
 };
 
+// eslint-disable-next-line 
 const { open, setOpen } = props;
 
 
