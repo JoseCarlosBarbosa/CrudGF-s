@@ -2,6 +2,8 @@ import React from "react";
 import "./pagInicial.css";
 import { useNavigate } from 'react-router-dom';
 
+// Pagina Inicial de escolhas.
+
 function PagInicial() {
 
 const Navigate = useNavigate();

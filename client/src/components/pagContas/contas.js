@@ -1,3 +1,5 @@
+import axios from 'axios'; 
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 
 
@@ -7,11 +9,61 @@ function Contas() {
     const VoltarButton = () =>{
         Navigate("/");
     }
+    const inicialvalue ={
+      name:"",
+      codFunc:"",
+      valorPago: "",
+      dataConta: "",
+      formaPagamento: "",
+      
+    }
+    
+    
+    const [values,setValues] = useState(inicialvalue);
+    
+    const[listaContas, setListaContas] = useState([]);
+
+  
 
 
+    const handleChangeValues = (value) => {
+      setValues(prevValue =>({
+        ...prevValue,
+        [value.target.name]: value.target.value,
+      }))
+
+    };
+
+    const HandleClickCadastrar = () => {
+      axios.post("http://localhost:3001/registerConta",{
+      name: values.name,
+      codFunc: values.codFunc,
+      valorPago: values.valorPago,
+      dataConta: values.dataConta,
+      formaPagamento: values.formaPagamento,
+      }).then(() =>{
+        setListaContas([
+          ...listaContas,{
+          name: values.name,
+          codFunc: values.codFunc,
+          valorPago: values.valorPago,
+          dataConta: values.dataConta,
+          formaPagamento: values.formaPagamento,
+          },
+        ]);
+        setValues(inicialvalue)
+      });
+    };
+
+
+   
     const HandleClickListar = () =>{
         Navigate("/contasListar")
     }
+
+   
+    
+
   return (
     <div className="app-container">
      <div className='register-container'>
@@ -27,7 +79,8 @@ function Contas() {
           name='name'
           placeholder='Nome'
           className='register-input' 
-          
+          onChange={handleChangeValues}
+          value = {values.name}
         />
 
         <input 
@@ -35,7 +88,8 @@ function Contas() {
           name='codFunc'
           placeholder='Codigo Funcionario'
           className='register-input'
-      
+          onChange={handleChangeValues}
+          value = {values.codFunc}
         />
 
         <input 
@@ -43,27 +97,31 @@ function Contas() {
           name="valorPago" 
           placeholder="Valor" 
           className="register-input" 
-       
+          onChange={handleChangeValues}
+          value = {values.valorPago}
         />
 
         <input 
           type="text"  
-          name="dataCompra" 
-          placeholder="Data da Compra" 
+          name="dataConta" 
+          placeholder="Data Conta" 
           className="register-input" 
-      
+          onChange={handleChangeValues}
+          value = {values.dataConta}
         />
         <input 
           type="text"  
           name="formaPagamento" 
           placeholder="Forma de Pagamento" 
           className="register-input" 
+          onChange={handleChangeValues}
+          value = {values.formaPagamento}
           
         />
       
       <div className="container-buton">
       
-      <button className = "register-button"  >
+      <button className = "register-button" onClick={HandleClickCadastrar} >
           Cadastrar
         </button>
 

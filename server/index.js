@@ -15,6 +15,22 @@ const db =mysql.createPool({
 app.use(cors())
 app.use(express.json()); 
 
+app.post("/registerConta", (req,res) => {
+    const { name } = req.body;
+    const { codFunc } = req.body;
+    const { valorPago } = req.body;
+    const { dataConta } = req.body;
+    const {formaPagamento} = req.body;
+
+    let SQL = "INSERT INTO contasbd (name,codFunc,valorPago,dataConta,formaPagamento) VALUES (?,?,?,?,?)"
+
+    db.query(SQL, [name,codFunc,valorPago,dataConta,formaPagamento ], (err, result) =>{
+        if(err) console.log(err);
+        else res.send(result);
+    });
+});
+
+
 app.post("/register", (req, res) =>{
 
     const { name } = req.body;
@@ -48,6 +64,32 @@ app.put("/edit", (req,res) => {
 
 });
 
+app.put("/editContas", (req,res) => {
+    const { idConta } = req.body;
+    const { name } = req.body;
+    const { codFunc } = req.body;
+    const { valorPago } = req.body;
+    const { dataConta } = req.body;
+    const {formaPagamento} = req.body;
+
+    let SQL = "UPDATE contasbd SET name = ?, codFunc = ?, valorPago = ?, dataConta=?, formaPagamento= ?  WHERE idConta = ?";
+    db.query(SQL, [name,codFunc,valorPago,dataConta,formaPagamento, idConta], (err, result) => {
+        if(err) console.log(err);
+        else res.send(result);
+    });
+
+});
+
+app.delete("/deleteContas/:idConta" ,(req, res) => {
+    const {idConta} = req.params;
+    let SQL = "DELETE FROM contasbd WHERE idConta = ?";
+    db.query(SQL, [idConta], (err,result) => {
+        if (err) console.log(err);
+         else res.send(result);
+    });
+});
+
+
 app.delete("/delete/:id" ,(req, res) => {
     const {id} = req.params;
     let SQL = "DELETE FROM vendasbd WHERE id = ?";
@@ -59,6 +101,14 @@ app.delete("/delete/:id" ,(req, res) => {
 
 app.get("/getVendas", (req,res)=>{
     let SQL ="SELECT * FROM vendasbd";
+    db.query(SQL, (err,result)=>{
+        if(err) console.log(err);
+        else res.send(result);
+    });
+});
+
+app.get("/getContas", (req,res)=>{
+    let SQL ="SELECT * FROM contasbd";
     db.query(SQL, (err,result)=>{
         if(err) console.log(err);
         else res.send(result);

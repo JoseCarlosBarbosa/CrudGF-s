@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import Axios from "axios";
 import { useNavigate } from 'react-router-dom'; // Certifique-se de que a rota correta seja importada
 
-
+// Cadastrar Vendas
 
 function App() {
 
@@ -36,6 +36,7 @@ const handleChangeValues = (value) => {
 const VoltarRegisterButton =() =>{
   Navigate("/");
 }
+
 const handleClickList = () =>{
     Navigate("/pagLista")
 }
