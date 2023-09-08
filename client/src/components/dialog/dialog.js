@@ -8,7 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Axios from "axios";
 import React, { useState } from "react";
 
-
+// abertura dialog para editar
 
 export default function FormDialog(props) { 
   const [editValues, setEditValues] = useState({
@@ -32,7 +32,6 @@ const handleEditVenda = () =>{
   handleClose();
 };
 
-// eslint-disable-next-line 
 const { open, setOpen } = props;
 
 
@@ -99,7 +98,7 @@ const handleChangeValues = value => {
           defaultValue={props.dataVenda}
           onChange = {handleChangeValues}
           label="Data da Venda"
-          type="timestamp"
+          type="text"
           fullWidth
         />
         <TextField

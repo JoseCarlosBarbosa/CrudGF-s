@@ -65,15 +65,15 @@ app.put("/edit", (req,res) => {
 });
 
 app.put("/editContas", (req,res) => {
-    const { idConta } = req.body;
+    const { idcontas } = req.body;
     const { name } = req.body;
     const { codFunc } = req.body;
     const { valorPago } = req.body;
     const { dataConta } = req.body;
     const {formaPagamento} = req.body;
 
-    let SQL = "UPDATE contasbd SET name = ?, codFunc = ?, valorPago = ?, dataConta=?, formaPagamento= ?  WHERE idConta = ?";
-    db.query(SQL, [name,codFunc,valorPago,dataConta,formaPagamento, idConta], (err, result) => {
+    let SQL = "UPDATE contasbd SET name = ?, codFunc = ?, valorPago = ?, dataConta=?, formaPagamento= ?  WHERE idcontas = ?";
+    db.query(SQL, [name,codFunc,valorPago,dataConta,formaPagamento, idcontas], (err, result) => {
         if(err) console.log(err);
         else res.send(result);
     });
@@ -81,9 +81,9 @@ app.put("/editContas", (req,res) => {
 });
 
 app.delete("/deleteContas/:idConta" ,(req, res) => {
-    const {idConta} = req.params;
-    let SQL = "DELETE FROM contasbd WHERE idConta = ?";
-    db.query(SQL, [idConta], (err,result) => {
+    const {idcontas} = req.params;
+    let SQL = "DELETE FROM contasbd WHERE idcontas = ?";
+    db.query(SQL, [idcontas], (err,result) => {
         if (err) console.log(err);
          else res.send(result);
     });
@@ -97,7 +97,7 @@ app.delete("/delete/:id" ,(req, res) => {
         if (err) console.log(err);
          else res.send(result);
     });
-});
+});  
 
 app.get("/getVendas", (req,res)=>{
     let SQL ="SELECT * FROM vendasbd";

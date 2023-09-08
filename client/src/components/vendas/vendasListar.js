@@ -3,7 +3,11 @@ import "./vendas.css"
 import FormDialog from "../dialog/dialog";
 
 
-// Formulario de edição;
+
+
+// Formulario da listagem
+
+
 export default function Venda(props) {
   const [open, setOpen] = useState(false); // Use o estado do useState
 
@@ -32,7 +36,7 @@ export default function Venda(props) {
         <h1 className="vendas--venda">Código da venda: {props.id}</h1>
         <p className="vendas--nome">Nome do Funcionário: {props.name}</p>
         <p className="vendas--codFunc">Código do Funcionário: {props.codFunc}</p>
-        <p className="vendas--valorVendido">Valor: {props.valorVendido}</p>
+        <p className="vendas--valorVendido">R$: {props.valorVendido}</p>
         <p className="vendas--dataVenda">Data da Venda: {props.dataVenda}</p>
         <p className="vendas--formaPagamentoVenda">Forma de Pagamento: {props.formaPagamentoVenda}</p>
       </div>

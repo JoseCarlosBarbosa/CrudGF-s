@@ -6,10 +6,10 @@ import "./pag2.css"
 import { Container } from "@material-ui/core";
 
 function Pag2() {
-  const navigate = useNavigate(); // Correto: useNavigate dentro do componente
+  const navigate = useNavigate();
 
   const VoltarRegisterButton = () => {
-    navigate("/"); // Use navigate para navegar de volta para a página inicial
+    navigate("/"); 
   }
 
   const [listaVendas, setListaVendas] = useState([]);
@@ -30,7 +30,7 @@ function Pag2() {
       </button>
     
       </Container>
-     
+      <h1 className="titulo--vendas"> Vendas</ h1>
       {listaVendas.map((value) => (
         <Vendas
           key={value.id}
