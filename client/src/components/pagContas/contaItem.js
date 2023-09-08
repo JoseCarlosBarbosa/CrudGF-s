@@ -24,7 +24,7 @@ export default function ContaItem(props) {
         setListalContas={props.setListalContas}
       />
       <div className="contasListar--container" onClick={handleClickConta}>
-        <h1 className="contas--Codvenda">Código PG: {props.idcontas}</h1>
+        <h1 className="contas--Codvenda">Cód Pagamento: {props.idcontas}</h1>
         <p className="contas--nome">Nome do Funcionário: {props.name}</p>
         <p className="contas--codFunc">Código do Funcionário: {props.codFunc}</p>
         <p className="contas--valorPago">R$: {props.valorPago}</p>

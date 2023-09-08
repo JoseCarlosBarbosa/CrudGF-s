@@ -49,8 +49,6 @@ app.put("/edit", (req,res) => {
 
 });
 
-<<<<<<< Updated upstream
-=======
 app.put("/editContas", (req,res) => {
     const { idcontas } = req.body;
     const { name } = req.body;
@@ -77,7 +75,6 @@ app.delete("/deleteContas/:idConta" ,(req, res) => {
 });
 
 
->>>>>>> Stashed changes
 app.delete("/delete/:id" ,(req, res) => {
     const {id} = req.params;
     let SQL = "DELETE FROM vendasbd WHERE id = ?";
