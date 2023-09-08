@@ -77,7 +77,7 @@ const handleClickList = () =>{
     <div className="app-container">
      <div className='register-container'>
       <h1 className = "register-title">GF'S </h1>
-      <h2 className = "sub-titleVenda">Cadastrar Venda </h2>
+      <h2 className = "sub-title">Cadastrar Venda </h2>
         <button className="voltar--P1" onClick={VoltarRegisterButton}>
           Voltar
         </button>
@@ -110,27 +110,23 @@ const handleClickList = () =>{
         />
 
         <input 
-          type="date"  
+          type="text"  
           name="dataVenda" 
           placeholder="Data da Venda" 
           className="register-input" 
           onChange={handleChangeValues}
           value = {values.dataVenda}
         />
-        <div className="register-input">
-          {values.formaPagamentoVenda}
-        </div>
-        <select
-          name="formaPagamentoVenda"
-          className="register-input"
+        <input 
+          type="text"  
+          name="formaPagamentoVenda" 
+          placeholder="Forma de Pagamento" 
+          className="register-input" 
           onChange={handleChangeValues}
-          value={values.formaPagamentoVenda}
-        >
-          <option value="Débito">Débito</option>
-          <option value="Crédito">Crédito</option>
-          <option value="Dinheiro">Dinheiro</option>
-          <option value="Pix">Pix</option>
-          </select>
+          value = {values.formaPagamentoVenda}
+          
+        />
+      
       <div className="container-buton">
       
       <button className = "register-button" 

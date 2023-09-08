@@ -9,9 +9,7 @@
   flex-direction: column;
   
 }
-.sub-titleVenda{
-  text-align: center;
-}
+
 .register-container {
   padding: 10px 20px;
   width: max-content;
@@ -85,23 +83,4 @@ border-radius: 30px;
   font-size: 1rem;
   background-color: #000000; /* Cor de fundo do cabeçalho */
   color: #ffffff; 
-}
-.voltar--P1{
- 
-  background-color: #3498db;
-  top: 20px; 
-  left: 20px; 
-  margin: -8px;
-  color: #ffffff;
-  font-size: 1rem;
-  padding: 20px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  background-color: #000000; /* Cor de fundo do cabeçalho */
-  color: #ffffff; /* Cor do texto do cabeçalho */
-  padding: 5px; /* Espaçamento interno do cabeçalho */
-  border-bottom: 2px solid #fff;
-transition: blackground-color 0.2s ease;
 }
