@@ -113,6 +113,7 @@ function Contas() {
         <div className="register-input">
           {values.formaPagamento}
         </div>
+        
         <select
           name="formaPagamento"
           className="register-input"
@@ -124,6 +125,7 @@ function Contas() {
           <option value="Dinheiro">Dinheiro</option>
           <option value="Pix">Pix</option>
         </select>
+
         <div className="container-button">
           <button className="register-button" onClick={HandleClickCadastrar} >
             Cadastrar

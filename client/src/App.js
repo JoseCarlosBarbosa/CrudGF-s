@@ -103,7 +103,7 @@ const handleClickList = () =>{
         <input 
           type="float"  
           name="valorVendido" 
-          placeholder="Valor" 
+          placeholder="R$ 00,00" 
           className="register-input" 
           onChange={handleChangeValues}
           value = {values.valorVendido}
@@ -117,11 +117,13 @@ const handleClickList = () =>{
           onChange={handleChangeValues}
           value = {values.dataVenda}
         />
+
          <div className="register-input">
           {values.formaPagamentoVenda}
         </div>
+
         <select
-          name="formaPagamento"
+          name="formaPagamentoVenda"
           className="register-input"
           onChange={handleChangeValues}
           value={values.formaPagamentoVenda}

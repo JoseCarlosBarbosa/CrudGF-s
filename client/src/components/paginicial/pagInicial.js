@@ -17,7 +17,7 @@ const Navigate = useNavigate();
   };
 
   const handleClickRelatorioPI = () => {
-    // Lógica a ser executada quando o terceiro botão é clicado
+    Navigate("/relatorioIFdatas")
   };
 
   return (
