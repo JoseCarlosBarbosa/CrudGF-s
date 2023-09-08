@@ -74,7 +74,7 @@ function Contas() {
     <div className="app-container">
       <div className='register-container'>
         <h1 className="register-title">GF'S </h1>
-        <h2 className="sub-title">Contas </h2>
+        <h2 className="sub-titleContas">Contas </h2>
         <button className="voltar--P1" onClick={VoltarButton}>
           Voltar
         </button>

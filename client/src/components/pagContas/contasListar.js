@@ -28,7 +28,7 @@ function ContasListar() {
     <button className="register-Voltar-Cadastrar" onClick={VoltarRegisterButton}>
       Voltar
     </button>
-      <h1 className="titulo--contas">Contas </h1>
+      <h1 className="titulo--contas"> Contas </h1>
       {listalContas.map((conta) => (
         <ContaItem
           key={conta.idcontas}

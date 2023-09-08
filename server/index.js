@@ -65,10 +65,10 @@ app.put("/editContas", (req,res) => {
 
 });
 
-app.delete("/deleteContas/:idConta" ,(req, res) => {
-    const {idConta} = req.params;
+app.delete("/deleteContas/:idcontas" ,(req, res) => {
+    const {idcontas} = req.params;
     let SQL = "DELETE FROM contasbd WHERE idcontas = ?";
-    db.query(SQL, [idConta], (err,result) => {
+    db.query(SQL, [idcontas], (err,result) => {
         if (err) console.log(err);
          else res.send(result);
     });
