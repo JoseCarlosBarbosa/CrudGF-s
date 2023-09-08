@@ -49,6 +49,35 @@ app.put("/edit", (req,res) => {
 
 });
 
+<<<<<<< Updated upstream
+=======
+app.put("/editContas", (req,res) => {
+    const { idcontas } = req.body;
+    const { name } = req.body;
+    const { codFunc } = req.body;
+    const { valorPago } = req.body;
+    const { dataConta } = req.body;
+    const {formaPagamento} = req.body;
+
+    let SQL = "UPDATE contasbd SET name = ?, codFunc = ?, valorPago = ?, dataConta=?, formaPagamento= ?  WHERE idcontas = ?";
+    db.query(SQL, [name,codFunc,valorPago,dataConta,formaPagamento, idcontas], (err, result) => {
+        if(err) console.log(err);
+        else res.send(result);
+    });
+
+});
+
+app.delete("/deleteContas/:idConta" ,(req, res) => {
+    const {idConta} = req.params;
+    let SQL = "DELETE FROM contasbd WHERE idcontas = ?";
+    db.query(SQL, [idConta], (err,result) => {
+        if (err) console.log(err);
+         else res.send(result);
+    });
+});
+
+
+>>>>>>> Stashed changes
 app.delete("/delete/:id" ,(req, res) => {
     const {id} = req.params;
     let SQL = "DELETE FROM vendasbd WHERE id = ?";

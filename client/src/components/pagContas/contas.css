@@ -1,0 +1,13 @@
+.register-button{
+    padding: 2px 5px;
+    margin-left: 40px;
+    font-size: 1rem;
+    background-color: #000000; /* Cor de fundo do cabeçalho */
+    color: #ffffff;
+}
+.listar-button{
+    padding: 2px 5px;
+    font-size: 1rem;
+    background-color: #000000; /* Cor de fundo do cabeçalho */
+    color: #ffffff; 
+}
