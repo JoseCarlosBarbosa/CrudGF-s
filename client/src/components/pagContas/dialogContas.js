@@ -48,7 +48,7 @@ export default function FormDialogConta(props) {
     Axios.delete(`http://localhost:3001/deleteContas/${editValues.idcontas}`)
       .then(() => {
         handleCloseContas();
-        navigate("/contasListar");
+       
       })
       .catch((error) => {
         console.error("Erro ao excluir conta:", error);

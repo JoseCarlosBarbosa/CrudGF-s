@@ -110,22 +110,27 @@ const handleClickList = () =>{
         />
 
         <input 
-          type="text"  
+          type="date"  
           name="dataVenda" 
           placeholder="Data da Venda" 
           className="register-input" 
           onChange={handleChangeValues}
           value = {values.dataVenda}
         />
-        <input 
-          type="text"  
-          name="formaPagamentoVenda" 
-          placeholder="Forma de Pagamento" 
-          className="register-input" 
+         <div className="register-input">
+          {values.formaPagamentoVenda}
+        </div>
+        <select
+          name="formaPagamento"
+          className="register-input"
           onChange={handleChangeValues}
-          value = {values.formaPagamentoVenda}
-          
-        />
+          value={values.formaPagamentoVenda}
+        >
+          <option value="Débito">Débito</option>
+          <option value="Crédito">Crédito</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Pix">Pix</option>
+        </select>
       
       <div className="container-buton">
       
