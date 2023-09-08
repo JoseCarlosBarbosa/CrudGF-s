@@ -80,7 +80,7 @@ app.put("/editContas", (req,res) => {
 
 });
 
-app.delete("/deleteContas/:idConta" ,(req, res) => {
+app.delete("/deleteContas/:idcontas" ,(req, res) => {
     const {idcontas} = req.params;
     let SQL = "DELETE FROM contasbd WHERE idcontas = ?";
     db.query(SQL, [idcontas], (err,result) => {
