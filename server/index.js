@@ -115,32 +115,36 @@ app.get("/getContas", (req,res)=>{
     });
 });
 
-app.get("/getValorTotalGeral", async (req, res, next) => {
-    const dataInicio = req.query.dataInicio;
-    const dataFim = req.query.dataFim;
-  
-    const sql = `
-      SELECT SUM(valorTotal) AS valorTotalGeral
-      FROM (
-        SELECT SUM(vendasbd.valorVendido) AS valorTotal
-        FROM vendasbd 
-        WHERE dataVenda BETWEEN ? AND ?
-        UNION
-        SELECT SUM(cb.valorPago) AS valorTotal
-        FROM contasbd cb
-        WHERE dataConta BETWEEN ? AND ?
-      ) AS subquery
-    `;
-  
-    try {
-      const result = await db.query(sql, [dataInicio, dataFim, dataInicio, dataFim]);
+app.use(cors());
+app.use(express.json());
+
+app.get("/getValorTotalGeral", async (req, res) => {
+  const { dataInicio, dataFim } = req.query;
+
+  // SQL para calcular a soma dos valores
+  const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalGeral
+    FROM (
+      SELECT SUM(valorVendido) AS valorTotal FROM vendasbd WHERE dataVenda BETWEEN ? AND ?
+      UNION
+      SELECT SUM(valorPago) AS valorTotal FROM contasbd WHERE dataConta BETWEEN ? AND ?
+    ) AS subquery
+  `;
+
+  try {
+    const result = await db.query(SQL, [dataInicio, dataFim, dataInicio, dataFim]);
+    if (result[0] && result[0].valorTotalGeral !== null) {
       const valorTotalGeral = result[0].valorTotalGeral;
       res.json({ valorTotalGeral });
-    } catch (error) {
-      console.error("Erro ao executar a consulta SQL:", error);
-      res.status(500).json({ error: "Erro ao calcular o valor total" });
+    } else {
+      res.json({ valorTotalGeral: 0 }); // Pode definir um valor padrão
     }
-  });
+  } catch (error) {
+    console.error("Erro ao executar a consulta SQL:", error);
+    res.status(500).json({ error: "Erro ao calcular o valor total" });
+  }
+});
+  
   
 
 
