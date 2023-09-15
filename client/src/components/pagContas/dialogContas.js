@@ -116,7 +116,7 @@ export default function FormDialogConta(props) {
           value={editValues.dataConta}
           onChange={handleChangeValues}
           label="Data Conta"
-          type="text"
+          type="date"
           fullWidth
         />
         <TextField
