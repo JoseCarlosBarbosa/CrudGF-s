@@ -20,6 +20,7 @@ export default function ContaItem(props) {
         valorPago={props.valorPago} 
         dataConta={props.dataConta}
         formaPagamento={props.formaPagamento}
+        refreshList={props.refreshList}
         listalContas={props.listalContas}
         setListalContas={props.setListalContas}
       />

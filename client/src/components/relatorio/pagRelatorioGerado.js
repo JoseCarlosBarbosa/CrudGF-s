@@ -8,7 +8,7 @@ function GerarRelatorio() {
   const { dataInicio, dataFim } = location.state;
   const navigate = useNavigate();
 
-  const [valorTotal, setValorTotal] = useState(null);
+  const [valorTotal, setValorTotal] = useState([]);
 
   function formatarDatauser(data) {
     const partes = data.split('-');
@@ -18,6 +18,7 @@ function GerarRelatorio() {
     }
     return data;
   }
+
   function formatarDataBD(data) {
     const partes = data.split('/');
     if (partes.length === 3) {
@@ -29,11 +30,13 @@ function GerarRelatorio() {
 
   useEffect(() => {
     const FormatdataInicio = formatarDataBD(dataInicio);
-    const FormatdataFim= formatarDataBD(dataFim);
+    const FormatdataFim = formatarDataBD(dataFim);
 
     Axios.get(`http://localhost:3001/getValorTotalGeral?dataInicio=${FormatdataInicio}&dataFim=${FormatdataFim}`)
       .then((response) => {
-        const valorTotal = response.data.valorTotal;
+        console.log(response);
+        const valorTotal = response.data[0].valorTotalGeral;
+
         setValorTotal(valorTotal);
       })
       .catch((error) => {
@@ -44,6 +47,7 @@ function GerarRelatorio() {
 
   return (
     <div>
+
       <p>{dataInicio}</p>
       <h1>Relatório Gerado</h1>
       <p>Data de Início: {formatarDatauser(dataInicio)}</p>
@@ -52,7 +56,9 @@ function GerarRelatorio() {
       <button onClick={() => navigate('/')}>
         Voltar para a página inicial
       </button>
+
     </div>
+
   );
 }
 

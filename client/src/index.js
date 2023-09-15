@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/pagLista" element={<Pag2 listaVendas={listaVendas} />} />
         <Route path="/App" element={<App/>} />
         <Route path="/Contas" element={<Contas/>} />
-        <Route path="/contasListar" element={<ContasListar/>} />
+        <Route path="/contasListar" element={<ContasListar />} />
         <Route path="/relatorioIFdatas" element ={<Rdatas/>} />
         <Route path="/relatorio" element={<GerarRelatorio />} />
       </Routes>

@@ -11,7 +11,13 @@ function Pag2() {
   const VoltarRegisterButton = () => {
     navigate("/"); 
   }
-
+  function formatarDatauser(data) {
+    const dataObj = new Date(data);
+    const dia = String(dataObj.getDate()).padStart(2, '0');
+    const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
+    const ano = dataObj.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  }
   const [listaVendas, setListaVendas] = useState([]);
   
   useEffect(() => {
@@ -40,7 +46,7 @@ function Pag2() {
           name={value.name}
           codFunc={value.codFunc}
           valorVendido={value.valorVendido}
-          dataVenda = {value.dataVenda}
+          dataVenda = {formatarDatauser(value.dataVenda)}
           formaPagamentoVenda= {value.formaPagamentoVenda}
         />
       ))}

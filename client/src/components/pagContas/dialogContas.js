@@ -15,9 +15,10 @@ export default function FormDialogConta(props) {
     codFunc: props.codFunc,
     valorPago: props.valorPago,
     dataConta: props.dataConta,
-    formaPagamento: props.formaPagamento,
+    formaPagamento: props.formaPagamento, 
+    
   });
-
+ 
   const navigate = useNavigate();
 
   const handleEditContas = () => {
@@ -28,6 +29,7 @@ export default function FormDialogConta(props) {
       valorPago: editValues.valorPago,
       dataConta: editValues.dataConta,
       formaPagamento: editValues.formaPagamento,
+      
     })
       .then(() => {
         handleCloseContas();
@@ -41,6 +43,7 @@ export default function FormDialogConta(props) {
   const { open, setOpen } = props;
 
   const handleCloseContas = () => {
+    props.refreshList();
     setOpen(false);
   };
 
@@ -54,10 +57,13 @@ export default function FormDialogConta(props) {
         console.error("Erro ao excluir conta:", error);
       });
   };
-
+  
+  
   useEffect(() => {
     // Atualize o estado local quando as props mudarem (por exemplo, ao clicar em um item da lista).
+   
     setEditValues({
+      
       idcontas: props.idcontas,
       name: props.name,
       codFunc: props.codFunc,
@@ -65,6 +71,7 @@ export default function FormDialogConta(props) {
       dataConta: props.dataConta,
       formaPagamento: props.formaPagamento,
     });
+    
   }, [props]);
 
   const handleChangeValues = (event) => {
@@ -80,6 +87,7 @@ export default function FormDialogConta(props) {
       <DialogTitle id="form-dialog-title">Editar Conta</DialogTitle>
       <DialogContent>
         <TextField
+        
           autoFocus
           margin="dense"
           id="name"
