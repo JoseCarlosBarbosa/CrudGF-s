@@ -15,8 +15,8 @@ export default function RelatorioItem(props){
             setlistalRelatorio={props.setlistalRelatorio}
           />
           <div className="contasListar--container">Relatorio
-            <p className="contas--Codvenda">Data Inicio: {props.dataRInicio}</p>
-            <p className="contas--nome">Data Final: {props.dataRFim}</p>
+            <p className="data--Inicio">Data Inicio: {props.dataRInicio}</p>
+            <p className="data--Fim">Data Final: {props.dataRFim}</p>
           </div>
         </>
       );
