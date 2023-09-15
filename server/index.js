@@ -115,30 +115,28 @@ app.get("/getContas", (req,res)=>{
     });
 });
 
-app.get("/getValorTotalGeral", (req, res) => {
-    const { dataInicio } = req.query; // Obtenha a data a partir dos parâmetros de consulta
+app.use(cors());
+app.use(express.json());
+
+app.get("/getValorTotalGeral", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
   
-    // Verifique se a data é válida (faça validação, se necessário)
-  
+   
     const SQL = `
-      SELECT SUM(valorVendido) AS valorTotalGeral
-      FROM vendasbd
-      WHERE dataVenda = '${dataInicio}';
+      SELECT SUM(valorTotal) AS valorTotal
+      FROM (
+        SELECT SUM(valorVendido) AS valorTotal FROM vendasbd WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}'
+        UNION
+        SELECT SUM(valorPago) AS valorTotal FROM contasbd WHERE dataConta BETWEEN '${dataInicio}' AND '${dataFim}'
+      ) AS subquery
     `;
-  
-    db.query(SQL, (err, result) => {
-      if (err) {
-        console.log(err);
-        res.status(500).json({ error: "Erro ao executar a consulta" });
-      } else {
-        res.json(result);
-      }
+    db.query(SQL, (err,result)=>{
+        if(err) console.log(err);
+        else res.send(result);
     });
   });
-
   
-
- 
+  
   
 
 
