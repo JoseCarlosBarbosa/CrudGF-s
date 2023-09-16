@@ -1,0 +1,293 @@
+/* Estilos para .relatorio-container */
+.relatorio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+
+
+}
+
+/* Estilos para .relatorio-header */
+.relatorio-header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #051725;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid #1e293b;
+    padding: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    display: inline-block;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+/* Estilos para .relatorio-data */
+.relatorio-data {
+    font-family: 'Londrina Shadow';
+    display: flexbox;
+    flex-direction: column;
+    margin-top: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.relatorio-dataT {
+    font-family: 'Londrina Shadow';
+    display: flexbox;
+    flex-direction: column;
+    margin-top: 2px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Estilos para .relatorio-titulo */
+.relatorio-titulo {
+    font-family: 'Londrina Shadow';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 100px;
+    line-height: 76px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+}
+
+.mobile-screen-container {
+    border: 2px solid #000000;
+    padding: 20px;
+    margin: 65px;
+    background-color: #1e293b;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: inline-block;
+    width: calc(45% - 50px);
+    margin-right: 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+/* Estilos para .valor-total-container */
+.valor-total-container {
+
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+
+    padding: -0px;
+    margin: -15px;
+    background-color: #1e293b;
+    display: flow-root;
+    box-sizing: border-box;
+    align-items: center;
+
+}
+
+/* Estilos para .valor-total-titulo */
+.valor-total-titulo {
+
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid #1e293b;
+    padding: 20px;
+    margin: 65px;
+    background-color: #534f4f;
+
+    border-radius: 10px;
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 20px;
+    margin: 35px;
+}
+
+/* Estilos para .valor-total */
+.valor-total {
+    margin: -35px;
+    font-size: 3rem;
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    margin: -45px;
+
+}
+
+/* Estilos para .vendas-total-container */
+.vendas-total-container {
+    font-family: 'Londrina Shadow';
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid #1e293b;
+    padding: 0px 20px;
+    margin: 15px;
+    background-color: #1e293b;
+    padding: 20px;
+    margin: 35px;
+
+    align-items: center;
+
+}
+
+/* Estilos para .vendas-total-titulo */
+.vendas-total-titulo {
+    font-size: 1.5rem;
+
+    margin-bottom: 0px;
+    color: #fff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border: 163px solid #1e293b;
+    padding: 10px 40px;
+    margin: 15px;
+    background-color: #534f4f;
+    border-radius: 10px;
+    width: max-content;
+    padding: 20px;
+    margin: 35px;
+}
+
+/* Estilos para .vendas-total */
+.vendas-total {
+    margin-top: -150px;
+    font-size: 3rem;
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+/* Estilos para .vendas-total-subtitulo */
+.vendas-total-subtitulo {
+    font-family: 'Londrina Shadow';
+    font-size: 1.5rem;
+    color: #d6da12;
+    margin-top: 5px;
+    text-align: center;
+    padding: 2px;
+    margin: 10px;
+
+}
+
+/* Estilos para .vendas-funcionarios-container */
+.vendas-funcionarios-container {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    padding: 10px 40px;
+    margin: -14.7px;
+    background-color: #1e293b;
+    display: flow-root;
+    box-sizing: border-box;
+    text-align: center;
+
+
+}
+
+/* Estilos para .vendas-funcionarios-titulo */
+.vendas-funcionarios-titulo {
+
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    border: 2px solid #1e293b;
+    padding: 20px;
+    margin: 0px;
+    background-color: #534f4f;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 20px;
+    margin: 35px;
+
+}
+
+/* Estilos para .vendas-funcionarios-item */
+.vendas-funcionarios-item {
+
+    font-size: 1.3rem;
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Estilos para .pagamento-contas-container */
+.pagamento-contas-container {
+    font-family: 'Londrina Shadow';
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid #1e293b;
+    /* Cor da borda semelhante ao relatorio-header */
+    padding: 20px;
+    margin: 35px;
+
+}
+
+/* Estilos para .pagamento-contas-titulo */
+.pagamento-contas-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    border: 2px solid #1e293b;
+    padding: 20px;
+    margin: 0px;
+    background-color: #534f4f;
+    border-radius: 10px;
+}
+
+/* Estilos para .pagamento-contas-total */
+.pagamento-contas-total {
+    font-family: 'Londrina Shadow';
+    font-size: 3rem;
+    color: #d6da12;
+    margin-top: 5px;
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+}
+
+/* Estilos para .pagamento-contas-subtitulo */
+.pagamento-contas-subtitulo {
+    font-size: 1.5rem;
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Estilos para .voltar-button */
+.voltar-button {
+    position: fixed;
+    background-color: #3498db;
+    top: 20px;
+    left: 20px;
+    margin: -8px;
+    color: #ff0000;
+    font-size: 0, 7rem;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #333;
+    /* Cor de fundo do cabeçalho */
+    color: #fff;
+    /* Cor do texto do cabeçalho */
+    padding: 5px;
+    /* Espaçamento interno do cabeçalho */
+    border-bottom: 2px solid #fff;
+    transition: blackground-color 0.2s ease;
+}

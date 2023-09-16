@@ -1,4 +1,3 @@
-
 .contasListar--container {
   border: 2px solid #000000;
   padding: 20px;
@@ -12,12 +11,13 @@
   margin-right: 20px;
   margin-top: 10px;
   box-sizing: border-box;
-  }
-.register-Voltar-Cadastrar{
-  position:fixed;
-  background-color: #3498db; 
-  top: 20px; 
-  left: 20px; 
+}
+
+.register-Voltar-Cadastrar {
+  position: fixed;
+  background-color: #3498db;
+  top: 20px;
+  left: 20px;
   margin: -8px;
   color: #ffffff;
   font-size: 1rem;
@@ -26,27 +26,34 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  background-color: #000000; /* Cor de fundo do cabeçalho */
-  color: #ffffff; /* Cor do texto do cabeçalho */
-  padding: 5px; /* Espaçamento interno do cabeçalho */
+  background-color: #000000;
+  /* Cor de fundo do cabeçalho */
+  color: #ffffff;
+  /* Cor do texto do cabeçalho */
+  padding: 5px;
+  /* Espaçamento interno do cabeçalho */
   border-bottom: 2px solid #fff;
-transition: blackground-color 0.2s ease;
+  transition: blackground-color 0.2s ease;
 }
-  .contas--codFunc,
-  .contas--nome,
-  .contas--valorPago{
-    font-weight: bold;
-    color: #e74c3c;
-  }
-  .titulo--contas{
-    text-align: center;
-    padding: 10px;
-    margin: 25px;
-   
-  }
-  .contas--codvenda {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
- 
- 
+
+.contas--codFunc,
+.contas--nome,
+.contas--valorPago {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Estilos para .mobile-screen-container */
+
+
+.titulo--contas {
+  text-align: center;
+  padding: 10px;
+  margin: 25px;
+
+}
+
+.contas--codvenda {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}

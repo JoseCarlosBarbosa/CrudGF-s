@@ -137,9 +137,256 @@ app.get("/getValorTotalGeral", async (req, res) => {
     });
 });
 
+app.get("/getValorID1", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalGeral
+    FROM (
+      SELECT SUM(valorVendido) AS valorTotal FROM vendasbd WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}'and codFunc = '1'
+      UNION
+      SELECT SUM(valorPago) AS valorTotal FROM contasbd WHERE dataConta BETWEEN '${dataInicio}' AND '${dataFim}' and codFunc = '1'
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
 
+app.get("/getValorID1", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalGeral
+    FROM (
+      SELECT SUM(valorVendido) AS valorTotal FROM vendasbd WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}'and codFunc = '1'
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
 
+app.get("/getValorID2", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalGeral
+    FROM (
+      SELECT SUM(valorVendido) AS valorTotal FROM vendasbd WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}'and codFunc = '2'
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
 
+app.get("/getValorID3", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalGeral
+    FROM (
+      SELECT SUM(valorVendido) AS valorTotal FROM vendasbd WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}'and codFunc = '3'
+
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/getValorID4", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalGeral
+    FROM (
+      SELECT SUM(valorVendido) AS valorTotal FROM vendasbd WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}'and codFunc = '4'
+
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalVendido", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalGeral
+    FROM (
+      SELECT SUM(valorVendido) AS valorTotal FROM vendasbd WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}'
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalRecebido", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(cb.valorPago) AS valorTotal
+        FROM contasbd cb
+        WHERE dataConta BETWEEN '${dataInicio}' AND '${dataFim}'
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalRecebidoCredito", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(cb.valorPago) AS valorTotal
+        FROM contasbd cb
+        WHERE dataConta BETWEEN '${dataInicio}' AND '${dataFim}' AND formaPagamento = "Credito"
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalRecebidoDebito", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(cb.valorPago) AS valorTotal
+        FROM contasbd cb
+        WHERE dataConta BETWEEN '${dataInicio}' AND '${dataFim}'AND formaPagamento = "Debito"
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalRecebidoPix", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(cb.valorPago) AS valorTotal
+        FROM contasbd cb
+        WHERE dataConta BETWEEN '${dataInicio}' AND '${dataFim}'AND formaPagamento = "Pix"
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalRecebidoDinheiro", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(cb.valorPago) AS valorTotal
+        FROM contasbd cb
+        WHERE dataConta BETWEEN '${dataInicio}' AND '${dataFim}'AND formaPagamento = "Dinheiro"
+    ) AS subquery
+  `;
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalVendidoCredito", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(vb.valorVendido) AS valorTotal
+        FROM vendasbd vb
+        WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}' AND formaPagamentoVenda = "Credito"
+    ) AS subquery
+  `;
+
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalVendidoDebito", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(vb.valorVendido) AS valorTotal
+        FROM vendasbd vb
+        WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}' AND formaPagamentoVenda = "Debito"
+    ) AS subquery
+  `;
+
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalVendidoPix", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(vb.valorVendido) AS valorTotal
+        FROM vendasbd vb
+        WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}' AND formaPagamentoVenda = "Pix"
+    ) AS subquery
+  `;
+
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
+
+app.get("/valorTotalVendidoDinheiro", async (req, res) => {
+    const { dataInicio, dataFim } = req.query;
+    const SQL = `
+    SELECT SUM(valorTotal) AS valorTotalPG
+    FROM (
+      SELECT SUM(vb.valorVendido) AS valorTotal
+        FROM vendasbd vb
+        WHERE dataVenda BETWEEN '${dataInicio}' AND '${dataFim}' AND formaPagamentoVenda = "Dinheiro"
+    ) AS subquery
+  `;
+
+    db.query(SQL, (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send(result);
+    });
+});
 
 app.listen(3001, () => {
     console.log("Rodando Servidor");
