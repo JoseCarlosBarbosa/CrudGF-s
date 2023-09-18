@@ -1,0 +1,97 @@
+.fechamento-header {
+
+    border: 2px solid #1e293b;
+    padding: 20px;
+    margin: 65px;
+    background-color: #1e293b;
+    border-radius: 10px;
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 10px;
+    margin: 0px;
+    margin-top: 50px;
+}
+
+
+.fechamento-titulo {
+    font-family: 'Londrina Shadow';
+    font-style: normal;
+    font-weight: 3000;
+    font-size: 100px;
+    line-height: 76px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* fechamento.css */
+
+.fechamento-mobile-screen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.fechamento-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fechamento-titulo {
+    font-size: 24px;
+}
+
+.valor-total-caixa,
+.valor-caixa,
+.valor-conta,
+.valor-troco,
+Cadastro-data-troco {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.register-input {
+    width: 15%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.voltarRG--P1 {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 10px 40px;
+    background-color: #1e293b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+    /* Adicione um espaçamento entre os botões se desejar */
+}
+
+.registrarRG--P1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding: 10px 30px;
+    background-color: #1e293b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+    /* Adicione um espaçamento entre os botões se desejar */
+}
+
+
+/* Estilos adicionais conforme necessário */
