@@ -1,5 +1,6 @@
 
 Sistema de Gerenciamento Financeiro (GF's)
+
 Bem-vindo ao repositório do Sistema de Gerenciamento Financeiro (GF's), uma aplicação desenvolvida para atender às necessidades da microempresa Severina Modas, localizada na cidade de Itumirim. Este projeto tem como objetivo simplificar o controle de vendas, contas a pagar, geração de relatórios e fechamento de caixa da empresa. Utilizando tecnologias como JavaScript, React e Node.js, a aplicação proporciona uma interface intuitiva e eficiente para gerenciar as operações financeiras da empresa.
 
 Tecnologias Utilizadas
